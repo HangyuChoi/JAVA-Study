@@ -1,10 +1,9 @@
 package _2017_01_04;
 
 import java.util.Scanner;
-
-// 입력한 두수 범위에서 짝수 와 홀수 각각의 합을 구하시오 ( 메소드를 각각 표현 )
+// 입력한 두수 범위에서 짝수 와 홀수 각각의 합을 구하시오
 public class MethodEx4 {
-	
+
 	// 짝수
 	int a(int num1, int num2){
 		int sum = 0;
