@@ -1,10 +1,10 @@
 package _2017_01_06;
 
 
-// B¿¡ ´ëÇÑ superclass 
+// Bì— ëŒ€í•œ superclass 
 class C {
 	public C() {
-		// ¿©±â´Â »ó¼Ó±¸Á¶°¡ ¾ø±â¿¡ super(); °¡ ¾ø´Ù.
+		// ì—¬ê¸°ëŠ” ìƒì†êµ¬ì¡°ê°€ ì—†ê¸°ì— super(); ê°€ ì—†ë‹¤.
 		System.out.println("Constructor C");
 	}
 	int num = 10;
@@ -17,8 +17,8 @@ class C {
 	}
 }
 
-// C¿¡ ´ëÇÑ subclass B
-// A¿¡ ´ëÇÑ superclass 
+// Cì— ëŒ€í•œ subclass B
+// Aì— ëŒ€í•œ superclass 
 class B extends C {
 	public B() {
 		//super();
@@ -36,14 +36,14 @@ class B extends C {
 	}
 }
 
-// B¿¡ ´ëÇÑ superclass A
+// Bì— ëŒ€í•œ superclass A
 class A extends B {
 	public A() {
-		// ¿©±â¿¡´Â super(); °¡ ¼û°ÜÁ® ÀÖ´Ù. Àº´Ð
-		//super().super();  µÎ¹ø ¿¬¼ÓÇØ¼­ ¾µ ¼ö ¾ø´Ù. super ¶û this ¾ÈµÊ
+		// ì—¬ê¸°ì—ëŠ” super(); ê°€ ìˆ¨ê²¨ì ¸ ìžˆë‹¤. ì€ë‹‰
+		//super().super();  ë‘ë²ˆ ì—°ì†í•´ì„œ ì“¸ ìˆ˜ ì—†ë‹¤. super ëž‘ this ì•ˆë¨
 		System.out.println("Constructor A");
 	}
-	public void method() {	// A,B,C ¸ðµÎ method() °¡ ÀÖ´Ù. ¿À¹ö¶óÀÌµå¸¦ ÅëÇØ C B A ¼øÀ¸·Î ÀçÁ¤ÀÇ µÈ´Ù.
+	public void method() {	// A,B,C ëª¨ë‘ method() ê°€ ìžˆë‹¤. ì˜¤ë²„ë¼ì´ë“œë¥¼ í†µí•´ C B A ìˆœìœ¼ë¡œ ìž¬ì •ì˜ ëœë‹¤.
 		//System.out.println("method " + super.super.num);
 	}
 	public void method_A() {
@@ -53,15 +53,15 @@ class A extends B {
 
 public class InherEx2 {
 	public static void main(String args[]) {
-		A a = new A();	// A Å¬·¡½º °´Ã¼ »ý¼º
-		B b = a;		// ÀÚµ¿ Çü º¯È¯, ÀÚ½Ä -> ºÎ¸ð
-		C c = b;		// ÀÚµ¿ Çü º¯È¯, ÀÚ½Ä -> ºÎ¸ð
-		a.method();		// ÀçÁ¤ÀÇ µÈ A ÀÇ method(); ½ÇÇà   ÇÑ¹ø ÀçÁ¤ÀÇ°¡ ÀÏ¾î³ª¸é ¿ø·¡ÀÇ ±â´ÉÀ¸·Î µ¹¾Æ°¥ ¼ö¾ø´Ù.
-						// µû¶ó¼­ b.method(); ³ª c.method(); ¸¦ ÇØµµ AÀÇ method(); °¡ ½ÇÇà
-						// ÇÏÁö¸¸ super. À¸·Î Á¢±ÙÇÏ¸é ¾µ ¼ö ÀÖ´Ù. ( °´Ã¼·Î½á )
+		A a = new A();	// A í´ëž˜ìŠ¤ ê°ì²´ ìƒì„±
+		B b = a;		// ìžë™ í˜• ë³€í™˜, ìžì‹ -> ë¶€ëª¨
+		C c = b;		// ìžë™ í˜• ë³€í™˜, ìžì‹ -> ë¶€ëª¨
+		a.method();		// ìž¬ì •ì˜ ëœ A ì˜ method(); ì‹¤í–‰   í•œë²ˆ ìž¬ì •ì˜ê°€ ì¼ì–´ë‚˜ë©´ ì›ëž˜ì˜ ê¸°ëŠ¥ìœ¼ë¡œ ëŒì•„ê°ˆ ìˆ˜ì—†ë‹¤.
+						// ë”°ë¼ì„œ b.method(); ë‚˜ c.method(); ë¥¼ í•´ë„ Aì˜ method(); ê°€ ì‹¤í–‰
+						// í•˜ì§€ë§Œ super. ìœ¼ë¡œ ì ‘ê·¼í•˜ë©´ ì“¸ ìˆ˜ ìžˆë‹¤. ( ê°ì²´ë¡œì¨ )
 		a.method_A();
-		a.method_B();	// »ó¼Ó¹ÞÀº BÀÇ ¸Þ¼Òµå¿¡ Á¢±ÙÇÒ ¼ö ÀÖ´Ù.
-		a.method_C();	// »ó¼Ó¹ÞÀº BÀÇ ¸Þ¼Òµå¿¡ Á¢±ÙÇÒ ¼ö ÀÖ´Ù.
-		System.out.println(a.num);	// numÀÇ °æ¿ì È£ÃâÇÑ a ¿Í °¡±î¿î °É ¾´´Ù. ¸Ö¸®ÀÖ´Â cÀÇ numÀº Àº´ÐµÈ´Ù.
+		a.method_B();	// ìƒì†ë°›ì€ Bì˜ ë©”ì†Œë“œì— ì ‘ê·¼í•  ìˆ˜ ìžˆë‹¤.
+		a.method_C();	// ìƒì†ë°›ì€ Cì˜ ë©”ì†Œë“œì— ì ‘ê·¼í•  ìˆ˜ ìžˆë‹¤.
+		System.out.println(a.num);	// numì˜ ê²½ìš° í˜¸ì¶œí•œ a ì™€ ê°€ê¹Œìš´ ê±¸ ì“´ë‹¤. ë©€ë¦¬ìžˆëŠ” cì˜ numì€ ì€ë‹‰ëœë‹¤.
 	}
 }
