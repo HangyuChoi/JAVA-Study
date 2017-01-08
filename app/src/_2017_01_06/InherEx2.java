@@ -36,7 +36,7 @@ class B extends C {
 	}
 }
 
-// B에 대한 superclass A
+// B에 대한 subclass A
 class A extends B {
 	public A() {
 		// 여기에는 super(); 가 숨겨져 있다. 은닉
