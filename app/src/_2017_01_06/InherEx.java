@@ -10,7 +10,7 @@ package _2017_01_06;
   - 상속의 개념에서 super와 this를 구분함.
   - 메서드를 재사용 할 수 있음. ( method override)
   - 단일 상속(자바에서는 다중 상속x)
-  - extends 와 implements를 함계 사용할 수 있음.
+  - extends 와 implements를 함께 사용할 수 있음.
   
   형식)
   class A extends B {

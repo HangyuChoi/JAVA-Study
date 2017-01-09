@@ -1,39 +1,42 @@
 package _2017_01_06;
 
 // 동물
-class Animal {
+abstract class Animal {
 	String name;
 	int age;
+	
+	public Animal() {	// 직접 정의할 Monkey 클래스를 위해 작성
+		
+	}
 	
 	public Animal(String name, int age) {
 		this.name = name;
 		this.age = age;
 	}
-	String bark = "울부짖다";
-	public void bark() {
-		System.out.println(bark);
-	}
+	
+	abstract void bark();
 }
 
 // 동물 - 원숭이
 class Monkey extends Animal {
-	public Monkey(String name, int age) {
-		super(name, age);
+	String name;
+	int age;
+	public Monkey() {	// 직접정의
+		name = "원숭이";
+		age = 10;
 	}
-	String mbark = "우키키!!";
 	public void bark() {
-		System.out.println(bark +" : " + mbark);
+		System.out.println("우키키!!");
 	}
 }
 
 // 동물 - 고양이
-class Cat extends Animal {
+class Cat extends Animal {		// 매개변수 받아서 정의, 상위 클래스 상속
 	public Cat(String name, int age) {
 		super(name, age);
 	}
-	String cbark = "야옹~";
 	public void bark() {
-		System.out.println(bark +" : " + cbark);
+		System.out.println("야옹~");
 	}
 }
 
@@ -42,24 +45,25 @@ class Dog extends Animal {
 	public Dog(String name, int age) {
 		super(name, age);
 	}
-	String dbark = "멍멍-";
 	public void bark() {
-		System.out.println(bark +" : " + dbark);
+		System.out.println("멍멍-");
 	}
 }
 
 // 음식
-class Food {
+abstract class Food {
 	String name;
 	String content;
+	
+	public Food() {	// 직접 정의할 Dogfeed 클래스를 위해 작성
+		
+	}
+	
 	public Food (String name, String content) {
 		this.name = name;
 		this.content = content;
 	}
-	String eat = "먹어요.";
-	public void eat() {
-		System.out.println(eat);
-	}
+	public abstract void eat();
 }
 
 // 음식 - 생선
@@ -68,7 +72,7 @@ class Fish extends Food {
 		super(name, content);
 	}
 	public void eat() {
-		System.out.println(name +"를 " + eat);
+		System.out.println(name +"를 먹어요.");
 	}
 }
 
@@ -78,34 +82,32 @@ class Banana extends Food {
 		super(name, content);
 	}
 	public void eat() {
-		System.out.println(name +"를 " + eat);
+		System.out.println(name +"를 먹어요.");
 	}
 }
 
 //음식 - 개사료
 class Dogfeed extends Food {
-	public Dogfeed (String name, String content) {
-		super(name, content);
+	String name;
+	String content;
+	public Dogfeed () {
+		name = "사료";
+		content = "강아지먹이";
 	}
 	public void eat() {
-		System.out.println(name +"를 " + eat);
+		System.out.println(name +"를 먹어요.");
 	}
 }
 
 public class Animal_Constructor {
 	public static void main(String args[]) {
 		
-//		String array[][] = {
-//				{"바나나", "원숭이 먹이"},
-//				{"생선","고양이 먹이"},
-//				{"사료","강아지 먹이"}
-//		};
-		Monkey monkey = new Monkey("원숭이", 10);
+		Monkey monkey = new Monkey();
 		Cat cat = new Cat("고양이", 3);
 		Dog dog = new Dog("강아지", 7);
 		Banana banana = new Banana("바나나", "원숭이 먹이");
 		Fish fish = new Fish("생선","고양이 먹이");
-		Dogfeed dogfeed = new Dogfeed("사료","강아지 먹이");
+		Dogfeed dogfeed = new Dogfeed();
 		
 		System.out.println(monkey.name +", 나이 : " + monkey.age + "살");
 		monkey.bark();

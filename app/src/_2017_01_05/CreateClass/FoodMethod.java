@@ -1,4 +1,4 @@
-package CreateClass;
+package _2017_01_05.CreateClass;
 
 public class FoodMethod {
 
