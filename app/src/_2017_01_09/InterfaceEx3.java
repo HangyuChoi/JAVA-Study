@@ -12,7 +12,7 @@ public class InterfaceEx3 extends Frame {
 		setTitle("Å×½ºÆ®");
 		setSize(500, 500);
 		setVisible(true);
-		addWindowListener(new WindowAdapter(){
+		addWindowListener(new WindowAdapter() {
 		    public void windowClosing(WindowEvent e){
 		    	System.exit(0);
 		    } 

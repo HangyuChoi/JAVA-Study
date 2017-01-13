@@ -1,7 +1,7 @@
 package _2017_01_06;
 
 /*
- * 상속(inheritance)
+ * 상속 ( inheritance )
   - 상속이란 자식이 부모가 가지고 있는 재산이나 권력을 물려받는다는 의미.
   - 특정(자식) 클래스는 다른(부모) 클래스가 가지고 있는 모든 멤버변수나 멤버메소드를 사용할 수 있음.
   - 상속 관계에서 자식클래스의 객체를 생성 하였을 때 부모 클래스의 객체도 생성되어 짐.
@@ -28,7 +28,7 @@ public class InherEx extends SuperClass {	// extends SuperClass 를 통해 SuperCla
 	int age = 1;
 	int age2;
 	public InherEx() {
-		super(); // 이게 숨겨져 있다.  <- super 는 구문에서 최상단에 위치 해야한다.
+		//super(); // 이게 숨겨져 있다.  <- super 는 구문에서 최상단에 위치 해야한다.
 		System.out.println("subClass " + this.age);	// 상속된 상태에서 this.객체요소는 가까운 내꺼부터 찾고 없으면 부모껄 사용
 		System.out.println("subClass " + super.age);
 	}
@@ -88,7 +88,7 @@ class SuperClass {
 		age = 10;
 		name = "홍길동";
 	}
-}	// 실행 순서 : SuperClass -> 생성자 -> main메소드
+}	//  실행 순서 : SuperClass -> 생성자 -> main메소드 
 
 
 // 기존 거
